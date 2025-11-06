@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: micronaut-pg
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: micronaut
+      POSTGRES_PASSWORD: micronaut
+      POSTGRES_DB: micronaut
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
